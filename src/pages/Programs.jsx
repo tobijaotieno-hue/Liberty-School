@@ -1,5 +1,6 @@
 import SectionHeader from '../components/SectionHeader';
 import { programs } from '../data/programs';
+import swimImage from '../images/Swim.jpg';
 
 const Programs = () => {
   return (
@@ -38,8 +39,18 @@ const Programs = () => {
                   </div>
                 </div>
                 <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-                  <div className="bg-gray-200 h-80 rounded-lg flex items-center justify-center">
-                    <span className="text-gray-500">{program.category} Image Placeholder</span>
+                  <div className="bg-gray-200 h-80 rounded-lg overflow-hidden">
+                    {program.category === "Athletics & Physical Education" ? (
+                      <img 
+                        src={swimImage} 
+                        alt="Swimming" 
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="h-full flex items-center justify-center">
+                        <span className="text-gray-500">{program.category} Image</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
